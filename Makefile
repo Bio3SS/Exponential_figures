@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: notarget
+target pngtarget pdftarget vtarget acrtarget: fast.Rout 
 
 ##################################################################
 
@@ -31,6 +31,10 @@ provinces.pdf log_provinces.pdf: canada.Rout ;
 provinces.png log_provinces.png: %.png: %.pdf
 log_dandelion.Rout dandelion.Rout: geometric.Rout
 
+growth.Rout: bd.Rout growth.R
+fast.Rout: bd.Rout
+fast_scaled.Rout: bd.Rout
+
 happy.Rout sad.Rout: geometric.Rout
 log_happy.Rout log_sad.Rout: geometric.Rout
 rabbits.pdf log_rabbits.pdf: rabbits.Rout
@@ -49,4 +53,5 @@ rabbits.pdf log_rabbits.pdf: rabbits.Rout
 -include $(ms)/visual.mk
 
 -include $(ms)/wrapR.mk
+-include $(ms)/up.mk
 # -include $(ms)/oldlatex.mk
