@@ -1,0 +1,3 @@
+source("http://lalashan.mcmaster.ca/3SS/bd.R")
+bd(N0=10, tlab="Hours", b0=0, d0=0.02, MaxTime=1)
+bd(N0=10, tlab="Hours", b0=0, d0=0.02, MaxTime=168)
