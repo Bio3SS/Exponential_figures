@@ -2,10 +2,9 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: fast.Rout 
+target pngtarget pdftarget vtarget acrtarget: dandelion.Rout 
 
 ##################################################################
-
 
 # make files
 
@@ -25,11 +24,18 @@ canada.tsv: canada.raw canada.pl
 	$(PUSH)
 canada.Rout: canada.tsv
 
+## Some stochastic stuff here
+dandelion.Rout: geometric.Rout dandelion.R
+
+## Rescued in haste from wiki
+moth.Rout: moth.R
+
+### Older
+
 bacteria.Rout: geometric.Rout
 
 provinces.pdf log_provinces.pdf: canada.Rout ;
 provinces.png log_provinces.png: %.png: %.pdf
-log_dandelion.Rout dandelion.Rout: geometric.Rout
 
 growth.Rout: bd.Rout growth.R
 fast.Rout: bd.Rout
