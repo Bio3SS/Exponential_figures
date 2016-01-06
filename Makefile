@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: dandelion.Rout 
+target pngtarget pdftarget vtarget acrtarget: exponential.Rout.four.pdf 
 
 ##################################################################
 
@@ -26,6 +26,11 @@ canada.Rout: canada.tsv
 
 ## Some stochastic stuff here
 dandelion.Rout: geometric.Rout dandelion.R
+
+exponential.Rout.pdf:
+
+exponential.Rout.four.pdf:
+exponential.Rout.4r.pdf:
 
 ## Rescued in haste from wiki
 moth.Rout: moth.R
