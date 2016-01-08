@@ -29,8 +29,7 @@ dandelion.Rout: geometric.Rout dandelion.R
 
 exponential.Rout.pdf:
 
-exponential.Rout.four.pdf:
-exponential.Rout.4r.pdf:
+exponential.Rout.four.pdf: exponential.R
 
 ## Rescued in haste from wiki
 moth.Rout: moth.R

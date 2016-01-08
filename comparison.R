@@ -1,5 +1,6 @@
 x <- c(1, 10, 19, 100)
 
+par(cex=1.4)
 cplot <- function(x, log=""){
 	plot(x, 0*x
 		, yaxt="n", xlab="", ylab=""
