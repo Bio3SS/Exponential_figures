@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: exponential.Rout.four.pdf 
+target pngtarget pdftarget vtarget acrtarget: growth.Rout 
 
 ##################################################################
 
@@ -33,6 +33,9 @@ exponential.Rout.four.pdf: exponential.R
 
 ## Rescued in haste from wiki
 moth.Rout: moth.R
+
+## NTU simple dandelions
+ntu.Rout: geometric.Rout ntu.R
 
 ### Older
 
