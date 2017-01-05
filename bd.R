@@ -68,7 +68,7 @@ popSim = function (N0, MaxTime, steps, parms){
 	return(sim)
 }
 
-bd <- function(N0=NULL, MaxTime=20, steps=100, popMax=100, b0=1, bDD=NULL, bAllee=NULL, d0=0.5, dDD=NULL, dAllee=NULL, reportPcTotal="b", popSteps=100, fontSize=1, legendSize=1, title="", tlab = "Time (years)", plab="Population size"){
+bd <- function(N0=NULL, MaxTime=20, steps=100, popMax=100, b0=1, bDD=NULL, bAllee=NULL, d0=0.5, dDD=NULL, dAllee=NULL, reportPcTotal="b", popSteps=100, fontSize=1, legendSize=1, title="", tlab = "Time (years)", plab="Population size", showLog=TRUE, growMax=NULL){
 	pop <- 1:popSteps*(popMax/popSteps)
 
 	b <- rfun(b0, bDD, bAllee, pop, TRUE)
@@ -84,17 +84,20 @@ bd <- function(N0=NULL, MaxTime=20, steps=100, popMax=100, b0=1, bDD=NULL, bAlle
 
 	if(!is.null(N0)){
 		sim <- bdsim(N0, MaxTime, steps, b0, bDD, bAllee, d0, dDD, dAllee)
+		if(is.null(growMax)) growMax <- max(sim$N)
 		# print(data.frame(sim$time, sim$N))
 		plot(sim$time, sim$N,
 			cex.lab=fontSize, cex.axis=fontSize,
 			main=title, xlab = tlab, ylab = "Population",
-			type = "l", ylim = c(0, max(sim$N))
+			type = "l", ylim = c(0, growMax)
 		)
-		plot(sim$time, sim$N,
-			cex.lab=fontSize, cex.axis=fontSize,
-			main=title, xlab = tlab, ylab = "Population",
-			type = "l", ylim = c(1, max(sim$N)), log="y"
-		)
+		if (showLog){
+			plot(sim$time, sim$N,
+				cex.lab=fontSize, cex.axis=fontSize,
+				main=title, xlab = tlab, ylab = "Population",
+				type = "l", ylim = c(1, growMax), log="y"
+			)
+		}
 	}
 
 	# return(data.frame(pop, b, d))
