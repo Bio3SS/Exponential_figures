@@ -4,8 +4,8 @@ par(cex=1.4)
 cplot <- function(x, log=""){
 	plot(x, 0*x
 		, yaxt="n", xlab="", ylab=""
-		, cex=2.0, pch=1:4
-		, col=c("black", "black", "red", "blue")
+		, cex=3.0, pch=15:18
+		, col=c("green", "black", "blue", "red")
 		, log=log
 	)
 }
