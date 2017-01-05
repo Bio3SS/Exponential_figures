@@ -5,7 +5,7 @@ cplot <- function(x, log=""){
 	plot(x, 0*x
 		, yaxt="n", xlab="", ylab=""
 		, cex=3.0, pch=15:18
-		, col=c("green", "black", "blue", "red")
+		, col=c("black", "black", "blue", "red")
 		, log=log
 	)
 }
