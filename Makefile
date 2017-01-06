@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: growth.Rout 
+target pngtarget pdftarget vtarget acrtarget: comparison.Rout 
 
 ##################################################################
 
@@ -47,6 +47,8 @@ provinces.png log_provinces.png: %.png: %.pdf
 growth.Rout: bd.Rout growth.R
 fast.Rout: bd.Rout
 fast_scaled.Rout: bd.Rout
+decline.Rout: bd.Rout decline.R
+comparison.Rout: comparison.R
 
 happy.Rout sad.Rout: geometric.Rout
 log_happy.Rout log_sad.Rout: geometric.Rout
