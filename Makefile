@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: comparison.Rout 
+target pngtarget pdftarget vtarget acrtarget: characteristic.Rout 
 
 ##################################################################
 
@@ -24,18 +24,30 @@ canada.tsv: canada.raw canada.pl
 	$(PUSH)
 canada.Rout: canada.tsv
 
-## Some stochastic stuff here
+## Stochastic comparison (3SS)
 dandelion.Rout: geometric.Rout dandelion.R
 
-exponential.Rout.pdf:
+## Scaling comparisons (3SS)
+growth.Rout: bd.Rout growth.R
 
+## Which one is exponential?
+exponential.Rout: exponential.R
 exponential.Rout.four.pdf: exponential.R
+
+## Characteristic cool pictures (in developmen)
+characteristic.Rout: characteristic.R
+
+######################################################################
+
+## Weird stuff
 
 ## Rescued in haste from wiki
 moth.Rout: moth.R
 
 ## NTU simple dandelions
 ntu.Rout: geometric.Rout ntu.R
+
+######################################################################
 
 ### Older
 
@@ -44,7 +56,6 @@ bacteria.Rout: geometric.Rout
 provinces.pdf log_provinces.pdf: canada.Rout ;
 provinces.png log_provinces.png: %.png: %.pdf
 
-growth.Rout: bd.Rout growth.R
 fast.Rout: bd.Rout
 fast_scaled.Rout: bd.Rout
 decline.Rout: bd.Rout decline.R
@@ -55,14 +66,6 @@ log_happy.Rout log_sad.Rout: geometric.Rout
 rabbits.pdf log_rabbits.pdf: rabbits.Rout
 
 ######################################################################
-
-%.R %.pl %.raw:
-	/bin/cp $(Drop)/courses/exponential/$@ .
-
-### Makestuff
-
-## Change this name to download a new version of the makestuff directory
-# Makefile: start.makestuff
 
 -include $(ms)/git.mk
 -include $(ms)/visual.mk

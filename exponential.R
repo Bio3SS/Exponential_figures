@@ -24,5 +24,5 @@ cfun(exp((x/TC2)^2), log="y")
 
 cfun((x+1)^2, log="y")
 
-cfun(exp(x/TC), log="y")
+cfun(exp(x/TC))
 
