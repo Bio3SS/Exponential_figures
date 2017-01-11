@@ -6,6 +6,7 @@ charPlot <- function(tmax, Tc, N0=1, cpoints=NULL
 	N <- N0*exp(time/Tc)
 	plot(time, N , type = "l"
 		, xlab=xlab, ylab=ylab, main=main
+		, ylim = c(0, max(N))
 	)
 	for (c in cpoints){
 		x <- c(c, c, c-Tc, c)
