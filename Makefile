@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: characteristic.Rout 
+target pngtarget pdftarget vtarget acrtarget: speed_story.Rout 
 
 ##################################################################
 
@@ -36,6 +36,8 @@ exponential.Rout.four.pdf: exponential.R
 
 ## Characteristic cool pictures (in developmen)
 characteristic.Rout: characteristic.R
+speed_story.Rout: characteristic.Rout speed_story.R
+bacteria_scales.Rout: characteristic.Rout bacteria_scales.R
 
 ######################################################################
 
