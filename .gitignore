@@ -1,5 +1,8 @@
 commit.time
 .*.sw*
+local.mk
+
+canada.tsv
 
 *.pdf
 
@@ -17,10 +20,3 @@ commit.time
 
 *.wrapR.*
 
-local.mk
-
-testdir/
-.testdir/
-subclone_dir/
-
-*.makestuff
