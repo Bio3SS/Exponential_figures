@@ -1,16 +1,15 @@
 # Exponential_figures
 ### Hooks for the editor to set the default target
 current: target
-
-target pngtarget pdftarget vtarget acrtarget: bacteria_times.Rout 
+-include $(ms)/target.mk
 
 ##################################################################
 
 # make files
 
-Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
-include stuff.mk
-include $(ms)/perl.def
+Sources = Makefile .gitignore README.md sub.mk LICENSE.md
+include sub.mk
+-include $(ms)/perl.def
 
 ##################################################################
 
