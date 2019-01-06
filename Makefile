@@ -1,14 +1,27 @@
 # Exponential_figures
-### Hooks for the editor to set the default target
+
 current: target
--include $(ms)/target.mk
+-include target.mk
 
 ##################################################################
 
 # make files
 
-Sources = Makefile .ignore README.md sub.mk LICENSE.md
-include sub.mk
+Sources = Makefile README.md LICENSE.md
+
+ms = makestuff
+
+Makefile: $(ms)/Makefile
+	touch $@
+
+$(ms)/%.mk: $(ms)/Makefile
+	touch $@
+
+$(ms)/Makefile:
+	git submodule update -i $(ms) 
+	touch $@
+
+-include $(ms)/os.mk
 -include $(ms)/perl.def
 
 ##################################################################
@@ -19,6 +32,7 @@ Sources += $(wildcard *.R)
 Sources += $(wildcard *.pl)
 Sources += $(wildcard *.raw)
 
+Ignore += canada.tsv
 canada.tsv: canada.raw canada.pl
 	$(PUSH)
 canada.Rout: canada.tsv
