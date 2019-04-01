@@ -39,8 +39,8 @@ bdplots = function(pop, b, d, reportTotal=FALSE, title="Birth-death plot", fontS
 	legendSize=legendSize, plab=plab)
 }
 
+## 2019 Mar 09 (Sat)
 ## Probably remove divOffset from the numerator? It's a divOffset!
-2019 Mar 09 (Sat)
 rfun <- function(r0, DD, Allee, pop, birth=TRUE, divOffset=1/2, mmax=1000){
 	mult <- 1 + 0*pop
 	if (!is.null(DD)) mult <- mult*exp(pop/DD)
