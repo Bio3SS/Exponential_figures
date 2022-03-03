@@ -1,5 +1,5 @@
 # Doesn't hurt the make project, helps people who are sourcing
-require(deSolve)
+library(deSolve)
 
 # Device ask should be true if device is interactive
 options(device.ask.default=grDevices::dev.interactive(orNone = TRUE))
