@@ -58,6 +58,9 @@ moth.Rout: moth.R
 ## NTU simple dandelions
 ntu.Rout: geometric.Rout ntu.R
 
+## CPH 2023 Maybe better to use MMED stuff? Or just ancient stuff.
+cph.Rout: cph.R geometric.Rout
+
 ######################################################################
 
 ### Older
