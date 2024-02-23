@@ -75,6 +75,8 @@ fast_scaled.Rout: bd.Rout
 decline.Rout: bd.Rout decline.R
 comparison.Rout: comparison.R
 
+tt.Rout: tt.R bd_notime.Rout
+
 happy.Rout sad.Rout: geometric.Rout
 log_happy.Rout log_sad.Rout: geometric.Rout
 rabbits.pdf log_rabbits.pdf: rabbits.Rout
